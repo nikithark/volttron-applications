@@ -1,0 +1,53 @@
+{    # basetopic can be devices, analysis, or custom base topic
+    "basetopic": "analysis",
+    "publisherid": "PUBLISHER",
+    "maintain_timestamp": true,
+
+    # Declare standard topic format that identifies campus, building,
+    # device (unit), and subdevices (subdevices are optional)
+    "campus": "nrel",
+    "building": "dms",
+    "unit": {
+            "signal": {
+                "subdevices": []
+            }
+        },
+    "unittype_map": {
+         "messageType":"none",
+         "responseRequired":"none",
+         "eventID":"none",
+         "modificationNumber":"none",
+         "eventType":"none",
+         "priorityLevel":"none",
+         "createdDateTime":"datetime",
+         "eventStartDateTime":"datetime",
+         "eventDuration":"seconds",
+         "eventStatus":"none",
+         "responseAction":"none",
+         "priceStructure":"none",
+         "priceValue":"none"
+
+    },
+    "type_map": {
+         "messageType":"str",
+         "responseRequired":"str",
+         "eventID":"int",
+         "modificationNumber":"int",
+         "eventType":"str",
+         "priorityLevel":"str",
+         "createdDateTime":"datetime",
+         "eventStartDateTime":"datetime",
+         "eventDuration":"float",
+         "eventStatus":"float",
+         "responseAction":"str",
+         "priceStructure":"str",
+         "priceValue":"float"
+
+    },
+    # If a custom topic is desired the entire topic must be configured.
+    # e.g., "custom_topic": 'custom/topic/configuration'
+    # "custom_topic":
+    "input_file": "/home/nikitha/volttron/DmsBms/DataPublisher/test.csv",
+    # Publish interval in seconds
+    "publish_interval": 1
+}

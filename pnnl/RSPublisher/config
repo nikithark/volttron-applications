@@ -1,0 +1,33 @@
+{    # basetopic can be devices, analysis, or custom base topic
+    "basetopic": "analysis",
+    "publisherid": "PUBLISHER",
+    "maintain_timestamp": true,
+
+    # Declare standard topic format that identifies campus, building,
+    # device (unit), and subdevices (subdevices are optional)
+    "campus": "nrel",
+    "building": "dms",
+    "unit": {
+            "signal": {
+                "subdevices": []
+            }
+        },
+
+
+    "unittype_map": {
+         "eventStartDateTime":"datetime"
+
+    },
+    "type_map": {
+         "createdDateTime":"datetime"
+
+    },
+
+
+    # If a custom topic is desired the entire topic must be configured.
+    # e.g., "custom_topic": 'custom/topic/configuration'
+    # "custom_topic":
+    "input_file": "/home/nikitha/volttron/DmsBms/RSPublisher/test.csv",
+    # Publish interval in seconds
+    "publish_interval": 1
+}
