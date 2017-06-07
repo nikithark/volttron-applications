@@ -1,0 +1,87 @@
+Program Version,EnergyPlus, Version 8.4.0-09f5359d8a, YMD=2017.06.07 13:31,IDD_Version 8.4.0
+   ** Warning ** Sizing:Parameters: note Timesteps in Averaging Window entered value=[8] is less than 1 hour (i.e., 60 timesteps).
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** CheckUsedConstructions: There are 96 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_1", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_2", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_3", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_4", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_1", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_2", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_3", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_4", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_1", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_2", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_3", only 0.52 of the zone is controlled.
+   ** Warning ** GetDetailedDaylighting: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_4", only 0.52 of the zone is controlled.
+   ** Warning ** Calculated design heating load for zone=BASEMENT is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=CORE_BOTTOM is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=CORE_MID is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PERIMETER_BOT_ZN_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PERIMETER_BOT_ZN_2 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PERIMETER_BOT_ZN_1 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PERIMETER_BOT_ZN_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PERIMETER_MID_ZN_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=DATACENTER_BOT_ZN_6 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=DATACENTER_BASEMENT_ZN_6 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ************* Beginning System Sizing Calculations
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** The design coil load is zero for Coil:Heating:Water CORE_BOTTOM VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water CORE_MID VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water CORE_TOP VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL
+   **   ~~~   ** The autosize value for maximum water flow rate is zero
+   **   ~~~   ** To change this, input a value for UA, change the heating design day, or raise the
+   **   ~~~   **   system heating design supply air temperature. Also check to make sure the Preheat
+   **   ~~~   **   Design Temperature is not the same as the Central Heating Design Supply Air Temperature. 
+   ** Warning ** The design coil load is zero for Coil:Heating:Water PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL

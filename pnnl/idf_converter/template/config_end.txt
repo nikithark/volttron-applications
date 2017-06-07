@@ -1,0 +1,28 @@
+		 		 
+		"Whole Building Power" : {
+			"name" : "Whole Building",
+			"type" : "Facility Total Electric Demand Power",
+			"topic" : "PNNL/replace/all",
+			"field" : "TotalElectricDemandPower",
+			"meta" : {"units": "WATTS", "tz": "US/Pacific", "type": "float"},
+			"publish_last": true
+		},
+		"currentMonthV" : {
+			"name" : "EMS",
+			"type" : "currentMonthV"
+		},
+		"currentDayOfMonthV" : {
+			"name" : "EMS",
+			"type" : "currentDayOfMonthV"
+		},
+		"currentHourV" : {
+			"name" : "EMS",
+			"type" : "currentHourV"
+		},
+		"currentMinuteV" : {
+			"name" : "EMS",
+			"type" : "currentMinuteV"
+		}
+    }
+
+}

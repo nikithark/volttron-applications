@@ -1,0 +1,7 @@
+{
+	"properties" : {
+		"identity" : "platform.actuator",
+	    "model" : "%idf_file%/%idf_name%.idf",
+	    "weather" : "%wea_file_path%/%wea_name%.epw",
+	    "bcvtb_home" : "%bcvtb_file_path%/bcvtb"
+    },
