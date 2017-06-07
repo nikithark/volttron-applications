@@ -1,2 +1,2 @@
 Timestamp,signal_messageType,signal_responseRequired,signal_eventID,signal_modificationNumber,signal_eventType,signal_priorityLevel,signal_createdDateTime,signal_eventStartDateTime,signal_eventDuration,signal_eventStatus,signal_responseAction,signal_priceStructure,signal_priceValue
-1/26/2015 5:00,event notification,event participation,1,4,none,critical,1/26/2015 5:00,1/26/2015 5:00,10800,near,curtail load,absolute price,none
+1/26/2015 5:00,event notification,event participation,1,4,none,critical,08-01-2017 07:00:00,08-01-2017 16:00:00,10800,near,curtail load,absolute price,none

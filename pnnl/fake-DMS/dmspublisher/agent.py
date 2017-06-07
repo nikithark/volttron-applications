@@ -61,13 +61,17 @@ import logging
 import os
 import re
 import sys
+import gevent
 
 from volttron.platform.vip.agent import *
 from volttron.platform.agent import utils
 from volttron.platform.agent.utils import jsonapi
 from volttron.platform.messaging import topics
 from volttron.platform.messaging import headers as headers_mod
-
+from volttron.platform.vip.agent.utils import build_agent
+from volttron.platform.messaging.health import (STATUS_BAD,
+                                                STATUS_GOOD, Status)
+FORWARD_TIMEOUT_KEY = 'FORWARD_TIMEOUT_KEY'
 _log = logging.getLogger(__name__)
 __version__ = '3.0.1'
 
@@ -87,7 +91,7 @@ __copyright__ = 'Copyright (c) 2016, Battelle Memorial Institute'
 __license__ = 'FreeBSD'
 
 
-def DataPub(config_path, **kwargs):
+def DMSPub(config_path, **kwargs):
     '''Emulate device driver to publish data and Actuatoragent for testing.
 
     The first column in the data file must be the timestamp and it is not
@@ -100,6 +104,8 @@ def DataPub(config_path, **kwargs):
     maintain_timestamp = conf.get('maintain_timestamp', 0)
     remember_playback = conf.get('remember_playback', 0)
     reset_playback = conf.get('reset_playback', 0)
+    source_vip = conf.get('source-vip')
+    source_serverkey = conf['source-serverkey']
     
     if maintain_timestamp and not has_timestamp:
         raise ValueError(
@@ -195,8 +201,18 @@ def DataPub(config_path, **kwargs):
                     self._line_on+=1
                         
             self._log.info('Playback starting on line: {}'.format(self._line_on))
+#            self.forward_setup()
                     
-                
+        def forward_setup(self):
+            _log.debug("Setting up to forward to {}".format(source_vip))
+
+            agent = build_agent(address=source_vip,
+                                    serverkey=source_serverkey,
+                                    publickey=self.core.publickey,
+                                    secretkey=self.core.secretkey,
+                                    enable_store=False)
+
+            self._target_platform = agent                
             
         def store_line_on(self):
             basename = os.path.basename(path)+'.count'
@@ -303,9 +319,9 @@ def DataPub(config_path, **kwargs):
                     if topic_point.endswith('/all'):
                         root=point[:-3]
                         for p, v in data.items():
-                            meta[p] = {'type':  get_type(p), 'tz': 'US/Pacific', 'units': get_unit(p)}
+                            meta[p] = {'type':  get_type(p), 'tz': 'UTC', 'units': get_unit(p)}
                     else:
-                        meta[point] = {'type':  get_type(point), 'tz': 'US/Pacific', 'units': get_unit(point)}
+                        meta[point] = {'type':  get_type(point), 'tz': 'UTC', 'units': get_unit(point)}
                     
                     # Message will always be a list of two elements.  The first element
                     # is set with the data to be published.  The second element is meta
@@ -313,6 +329,7 @@ def DataPub(config_path, **kwargs):
                     # historians to work properly. 
                     message = [data, meta]
                     
+#                    self._target_platform.vip.pubsub.publish(peer='pubsub',
                     self.vip.pubsub.publish(peer='pubsub',
                                             topic=topic_final,
                                             message=message, #[data, {'source': 'publisher3'}],
@@ -382,8 +399,9 @@ def DataPub(config_path, **kwargs):
 
             else:
                 # Publish heartbeat on a topic.
+#                self._target_platform.vip.pubsub.publish(peer='pubsub',
                 self.vip.pubsub.publish(peer='pubsub',
-                                        topic='heartbeat/DataPublisherv3',
+                                        topic='heartbeat/DMSPublisherv3',
                                         headers={'AgentID': self._agent_id,
                                                  HEADER_NAME_DATE: now},
                                         message=now)
@@ -504,13 +522,13 @@ def DataPub(config_path, **kwargs):
                 except Exception as e:
                     self._log.error(e.message)
 
-    Publisher.__name__ = 'DataPub'
+    Publisher.__name__ = 'DMSPub'
     return Publisher(**kwargs)
 
 
 def main(argv=sys.argv):
     '''Main method called by the eggsecutable.'''
-    utils.vip_main(DataPub)
+    utils.vip_main(DMSPub)
 
 if __name__ == '__main__':
     try:

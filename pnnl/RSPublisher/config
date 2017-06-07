@@ -27,7 +27,7 @@
     # If a custom topic is desired the entire topic must be configured.
     # e.g., "custom_topic": 'custom/topic/configuration'
     # "custom_topic":
-    "input_file": "/home/nikitha/volttron/DmsBms/RSPublisher/test.csv",
+    "input_file": "/home/nikitha/volttron/DmsBms/reservation_publisher_agent/test.csv",
     # Publish interval in seconds
     "publish_interval": 1
 }

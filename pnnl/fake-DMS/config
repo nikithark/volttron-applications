@@ -12,6 +12,9 @@
                 "subdevices": []
             }
         },
+
+    "source-vip": "tcp://130.20.116.27:22916",
+    "source-serverkey": "TYIGM9_3Yi6Njta2dj0NyF0xz67OfjE7KL9gO4KU5gw",
     "unittype_map": {
          "messageType":"none",
          "responseRequired":"none",
@@ -44,10 +47,12 @@
          "priceValue":"float"
 
     },
+
+
     # If a custom topic is desired the entire topic must be configured.
     # e.g., "custom_topic": 'custom/topic/configuration'
     # "custom_topic":
-    "input_file": "/home/nikitha/volttron/DmsBms/DataPublisher/test.csv",
+    "input_file": "/home/nikitha/volttron/DmsBms/DMSPublisher/test.csv",
     # Publish interval in seconds
     "publish_interval": 1
 }

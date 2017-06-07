@@ -73,13 +73,13 @@ from os.path import expanduser
 home = expanduser("~")
 
 
-
+utc=pytz.UTC
 
 fn = home +'/stpt.txt'
 
 
 
-fpy = home+'/volttron/DmsBms/ControlAgent/plot.py'
+fpy = home+'/volttron/DmsBms/control_agent/plot.py'
 
 
 
@@ -132,7 +132,7 @@ class Controlagent(Agent):
         self.event_start=[]
         self.event_end=[]
         self.signal_time=[]
-
+        self.default=[]
         if os.path.isfile(fn):
                  os.remove(fn) 
         self.s=1   
@@ -198,8 +198,11 @@ class Controlagent(Agent):
                    else:
                             _log.info('donnot participate in the event response for timestamp: {}.'.format(startDateTime))                           
                             self.send_participation_no(EventID,modificationNumber) 
-
-        self.building_control()   
+        if len(self.default)<1:
+                           _log.info('default values for set points are required') 
+                           return
+        else:
+                           self.building_control()   
 
 
     def on_new_reservation(self, peer, sender, bus, topic, headers, message):
@@ -295,7 +298,7 @@ class Controlagent(Agent):
         self.s=self.s+1
         _log.info('Receieve the builiding response for timetamp: {}.'.format(current_time)) 
         if self.count<1:
-              self.default=[]
+              
               for i in range(len(self.points)):
    
                    old_control_value= data.get(str(self.points[i]+'_'+self.control_variable).lower())
